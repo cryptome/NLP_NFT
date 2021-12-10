@@ -53,14 +53,6 @@ with interactive_viz:
     beeple = Image.open('images/beeple1.png')
     st.image(beeple)
 
-    # Pyplot chart
-    st.title('A closer look at the data')
-
-    fig = go.Figure(data=go.Table(header=dict(values=list(df.index, df[['Sales (7d)', 'Avg Price (7d)', 'Owners']].columns)), cells=dict(values=[df[1], df[4], df[6]])))
-
-    #fig.update_layout()
-
-    st.write(fig)
 
     st.subheader('Top NFT Collections based on Compound Score')
     st.text('Whales & floor sweeps')
