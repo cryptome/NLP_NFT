@@ -1,6 +1,7 @@
 # Imports
 
 import streamlit as st
+import matplotlib.pyplot as plt
 import pandas as pd
 from PIL import Image
 
@@ -48,8 +49,19 @@ with dataset:
 # Interactive Visualization bin
 with interactive_viz:
     beeple = Image.open('images/beeple1.png')
-
     st.image(beeple)
+
+    # Pie chart
+    labels = (df.index)
+    sizes = (df['Avg Price (7d)'])
+    explode = (0.1, 0, 0, 0, 0)
+
+    fig1, ax1 = plt.subplots()
+    ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
+    ax1.axis('equal')
+
+    st.pyplot(fig1)
+
     st.subheader('Top NFT Collections based on Compound Score')
     st.text('Whales & floor sweeps')
     
