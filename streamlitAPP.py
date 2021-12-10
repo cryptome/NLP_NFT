@@ -1,7 +1,7 @@
 # Imports
 
 import streamlit as st
-import matplotlib.pyplot as plt
+import plotly.figure_factory as ff
 import pandas as pd
 from PIL import Image
 
@@ -60,7 +60,7 @@ with interactive_viz:
     ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
     ax1.axis('equal')
 
-    st.pyplot(fig1)
+    st.plotly_chart(fig1)
 
     st.subheader('Top NFT Collections based on Compound Score')
     st.text('Whales & floor sweeps')
