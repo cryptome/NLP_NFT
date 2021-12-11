@@ -45,7 +45,7 @@ with dataset:
     st.header('The Dataset')
     df = pd.read_csv('final_nft_data_v2.csv', index_col=0)
     st.dataframe(df.head(100).style.applymap(color_df, subset=['Compound Score']))
-    st.markdown('* **VADER Sentiment Analysis:** Using VADER we analyze #NFT tweets for the top 100 projects and extract the Compuond Score, Positive Score, Neutral Score, and Negative Score. In the dataset above all Compound Scores below / equal to 0.145 are labeled in red, and all Compound Scores above 0.145 are labeld in green.')
+    st.markdown('* **VADER Sentiment Analysis:** Using VADER (an open-source package within NLTK) we analyze #NFT tweets for the top 100 projects and extract the Compuond Score, Positive Score, Neutral Score, and Negative Score. In the dataset above all Compound Scores below / equal to 0.145 are labeled in red, and all Compound Scores above 0.145 are labeld in green. To calculate the sentimental score of the tweets, VADER scans for known sentimental featurs, calculates the intesity and polarity, then sums up the scores of all the features and normalizes the Compound Score to a range of -1 to +1.')
 
     
 # Interactive Visualization bin
