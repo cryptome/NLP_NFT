@@ -45,7 +45,7 @@ with dataset:
     st.header('The Dataset')
     df = pd.read_csv('final_nft_data_v2.csv', index_col=0)
     st.dataframe(df.head(100).style.applymap(color_df, subset=['Compound Score']))
-    st.markdown('* **VADER Sentiment Analysis:** Using VADER we analyze all the #NFT tweets and extract the Compuond Score, Positive Score, Neutral Score, and Negative Score.')
+    st.markdown('* **VADER Sentiment Analysis:** Using VADER we analyze #NFT tweets for the top 100 projects and extract the Compuond Score, Positive Score, Neutral Score, and Negative Score. In the dataset above all Compound Scores below / equal to 0.145 are labeled in red, and all Compound Scores above 0.145 are labeld in green.')
 
     
 # Interactive Visualization bin
@@ -55,7 +55,7 @@ with interactive_viz:
 
 
     st.subheader('Top NFT Collections based on Compound Score')
-    st.text('Whales & floor sweeps')
+    st.text('Whales & Floor Sweeps')
     
     sel_col, disp_col = st.columns(2)
 
@@ -89,7 +89,7 @@ with interactive_viz:
 
 
     st.subheader('NFT Collections with the largest number of sales in the past 7 days')
-    st.text('LFG! wagmi')
+    st.text('LFG! wagmi:)')
     
     sel_col, disp_col = st.columns(2)
 
